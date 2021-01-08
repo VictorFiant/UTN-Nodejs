@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var productsControllers = require("./controllers/productsControllers")
+
 /* GET users listing. */
-router.get('/', productsControllers.getAll);
+router.post('/', function(req, res, next) {
+  res.send('Prueba 3');
+});
 
 module.exports = router;
