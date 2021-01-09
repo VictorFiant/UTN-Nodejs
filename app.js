@@ -9,9 +9,9 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var RegistroRouter = require('./routes/registro');
 var LoginRouter = require('./routes/login');
-var ponerRouter = require('./routes/poner');
-var eliminarRouter = require('./routes/eliminar');
-var postearRouter = require('./routes/postear');
+var updateRouter = require('./routes/update');
+var removalRouter = require('./routes/removal');
+var creationRouter = require('./routes/creation');
 var app = express();
 
 // view engine setup
@@ -29,9 +29,9 @@ app.use('/users', usersRouter);
 app.use('/productos', productsRouter);
 app.use('/registro', RegistroRouter);
 app.use('/login', LoginRouter);
-app.use('/ponedor', ponerRouter);
-app.use('/eliminar', eliminarRouter);
-app.use('/postear', postearRouter);
+app.use('/actualizar', updateRouter);
+app.use('/eliminar', removalRouter);
+app.use('/crear', creationRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

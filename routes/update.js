@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.post('/', function(req, res, next) {
-  res.send('Prueba 3');
+/* PUT users listing. */
+router.put('/', function(req, res, next) {
+  res.send('prueba');
 });
 
 module.exports = router;
