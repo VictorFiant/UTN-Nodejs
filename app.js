@@ -12,6 +12,10 @@ var LoginRouter = require('./routes/login');
 var updateRouter = require('./routes/update');
 var removalRouter = require('./routes/removal');
 var creationRouter = require('./routes/creation');
+
+// const porque es una constante, no va a cambiar a lo largo de la execucion de la app
+var ProductController = require('./controllers/ProductController');
+
 var app = express();
 
 // view engine setup
@@ -32,6 +36,9 @@ app.use('/login', LoginRouter);
 app.use('/actualizar', updateRouter);
 app.use('/eliminar', removalRouter);
 app.use('/crear', creationRouter);
+
+// Directo el controller
+app.use('/product', ProductController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
