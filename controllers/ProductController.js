@@ -5,9 +5,20 @@ var router = express.Router();
 // In a real app, data should be stored in a real database
 var database = [];
 
-function get(req, res) {
-    res.json(database);
-}
+     function get(req, res, next) {
+            const productos = [
+              {
+                id:1,
+                name:"Fiat 1"
+              },
+              {
+                id:2,
+                name:"Ferrari 2"
+              }
+            ]
+            res.json(productos);
+        }
+    
 
 function getById(req, res) {
     res.json(database[req.params.productId]);

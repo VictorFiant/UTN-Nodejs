@@ -6,8 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var routerControllers = require('./routes/products');
-var RegistroRouter = require('./routes/registro');
+var registroRouter = require('./routes/registro');
 var LoginRouter = require('./routes/login');
 var updateRouter = require('./routes/update');
 var removalRouter = require('./routes/removal');
@@ -30,15 +29,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/productos', routerControllers);
-app.use('/registro', RegistroRouter);
 app.use('/login', LoginRouter);
 app.use('/actualizar', updateRouter);
 app.use('/eliminar', removalRouter);
 app.use('/crear', creationRouter);
+app.use('/registro', registroRouter);
 
 // Directo el controller
-app.use('/product', ProductController);
+app.use('/productos', ProductController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
